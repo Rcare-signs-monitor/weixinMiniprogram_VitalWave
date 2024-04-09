@@ -1,0 +1,10 @@
+<!--pages/breathing-curve/breathing-curve.wxml-->
+<view class="demo">
+  <view class="container" style="min-height: 500px;">
+  <ec-canvas id="mychart" canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <t-demo desc="AI分析如下：" style="position: fixed; bottom: 20%; left: 0; right: 0;">
+      <t-button theme="primary" block size="large" variant="outline" bind:tap="goResultPage">查看分析</t-button>
+    <base />
+  </t-demo>
+</view>

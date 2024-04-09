@@ -1,0 +1,8 @@
+<view class="page">
+  <view class="demo-section__wrapper">
+    <t-result theme="success" title="良好" description="监测呼吸曲线正常" />
+  </view>
+  <view class="demo-section__wrapper">
+    <t-button theme="primary" block size="large" variant="outline" bind:tap="goBack">返回</t-button>
+  </view>
+</view>

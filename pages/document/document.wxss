@@ -1,0 +1,29 @@
+/* pages/document/document.wxss */
+/* 在 WXSS 文件中 */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%; /* 设置表格的宽度，根据实际需求调整 */
+  border-collapse: collapse;
+}
+
+.row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.cell {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+page {
+  background-color: #fff;
+}

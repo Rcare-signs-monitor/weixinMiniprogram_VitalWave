@@ -1,0 +1,17 @@
+<!--pages/documentBP/documentBP.wxml-->
+<!-- <view>
+  <view class="container">
+  <ec-canvas id="mychart" canvas-id="mychart-multi" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <t-demo >
+    <text-only />
+  </t-demo>
+</view> -->
+<view>
+  <view class="container">
+  <ec-canvas id="mychart" canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <t-demo >
+    <text-only />
+  </t-demo>
+</view>

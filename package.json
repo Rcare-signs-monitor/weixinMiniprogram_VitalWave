@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "antd-mini": "^2.29.1",
+    "threejs-miniprogram": "^0.0.8"
+  }
+}

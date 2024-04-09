@@ -1,0 +1,4 @@
+/* pages/breathing-rate/breathing-rate.wxss */
+page {
+  background-color: #fff;
+}

@@ -1,0 +1,8 @@
+<view class="page">
+  <view class="demo-section__wrapper">
+    <t-result theme="warning" title="危险" description="监测呼吸曲线稍有异常，请联系医生" />
+  </view>
+  <view class="demo-section__wrapper">
+    <t-button theme="primary" block size="large" variant="outline" bind:tap="goBack">返回</t-button>
+  </view>
+</view>

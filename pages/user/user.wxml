@@ -1,0 +1,12 @@
+<view class="main">
+<view class="avatar-example">
+  <t-avatar class="avatar-example--large" icon="user" size="large" />
+</view>  
+    <view class="demo-section__wrapper">
+      <t-button theme="primary" block size="large" variant="outline" bind:tap="form_data">一键登录</t-button>
+      <view class="desc-login"> 登录后畅享更多功能</view>
+    </view>
+  <t-demo >
+    <text-only />
+  </t-demo>
+</view>

@@ -1,0 +1,86 @@
+<!--pages/user-home/user-home.wxml-->
+<view class="main">
+  <view class="avatar-example">
+    <t-avatar class="usrAvatar" image="{{avatarUrl}}" size='large' />
+  </view>
+  <view class="desc-login"> {{nickName}}</view>
+  <pull-down-list
+    wx:for="{{base}}"
+    name="{{item.name}}"
+    icon="{{item.icon}}"
+    wx:key="name"
+    childArr="{{item.childArr}}"
+    bind:click="bind_handle"
+  />
+  
+  <t-dialog
+  visible="{{showDialog}}"
+  content="请输入要绑定的用户：请用分号为分隔符，以姓名、地址、性别、年龄的顺序输入。"
+  title="信息绑定"
+  confirm-btn="确定"
+  cancel-btn="取消"
+  bind:confirm="closeDialog"
+  bind:cancel="closeDialogCancel"
+  >
+    <t-input 
+    class="dialog-input"
+    clearable
+    slot='content'
+    placeholder="请输入"
+    placeholder-class="placeholder"
+    bind:change="bindKeyInput"
+    >
+    </t-input>
+  </t-dialog>
+
+  <t-dialog
+  visible="{{showDialogUnbinding}}"
+  content="请输入要解除绑定的用户："
+  title="信息解绑"
+  confirm-btn="确定"
+  cancel-btn="取消"
+  bind:confirm="closeDialogUnbind"
+  bind:cancel="closeDialogUnbindingCancel"
+  >
+    <t-input 
+    class="dialog-input"
+    clearable
+    slot='content'
+    placeholder="请输入"
+    placeholder-class="placeholder"
+    bind:change="bindKeyInputUnbinding"
+    >
+    </t-input>
+  </t-dialog>
+
+  <pull-down-list
+    wx:for="{{ux}}"
+    name="{{item.name}}"
+    icon="{{item.icon}}"
+    wx:key="name"
+    childArr="{{item.childArr}}"
+    bind:click="click_handle"
+  />
+  <t-dialog
+  visible="{{showDialogChangeWard}}"
+  content="请输入要切换监测的用户："
+  title="监测切换"
+  confirm-btn="确定"
+  cancel-btn="取消"
+  bind:confirm="closeDialogChangeWard"
+  bind:cancel="closeDialogChangeWardCancel"
+  >
+    <t-input 
+    class="dialog-input"
+    clearable
+    slot='content'
+    placeholder="请输入"
+    placeholder-class="placeholder"
+    bind:change="bindKeyInputChangeWard"
+    >
+    </t-input>
+  </t-dialog>
+  <t-demo >
+    <text-only />
+  </t-demo>
+</view>

@@ -1,0 +1,192 @@
+<!--pages/doctor-service/doctor-service.wxml-->
+<view class="box" wx:if="{{status==0}}">
+    <view class="status_png">
+        <image src="./resource/images/status_1.png"></image>
+    </view>
+    <form bindsubmit="formsubmit" reportSubmit="true">
+        <view class="form-group">
+            <view class="form-group-top">
+                <image src="./resource/images/form1.png"></image>
+                <text>患者姓名</text>
+            </view>
+            <input name="name" placeholder="请填写患者姓名" placeholderStyle="color:#A5A5A5;" type="text"></input>
+        </view>
+        <view class="form-group">
+            <view class="form-group-top">
+                <image src="./resource/images/form2.png"></image>
+                <text>患者性别及年龄</text>
+            </view>
+            <view class="form-group-xb">
+                <radio-group bindchange="radio" name="gender" value="{{radioIndex}}">
+                    <label class="{{radioIndex=='男'?'onon':''}}">
+                        <image src="./resource/images/{{radioIndex=='男'?'form2-01':'form2-1'}}.png"></image>
+                        <text>男</text>
+                        <radio style="display:none;" value="男"></radio>
+                    </label>
+                    <label class="{{radioIndex=='女'?'onon':''}}">
+                        <image src="./resource/images/{{radioIndex=='女'?'form2-02':'form2-2'}}.png"></image>
+                        <text>女</text>
+                        <radio style="display:none;" value="女"></radio>
+                    </label>
+                </radio-group>
+                <view class="age_box">
+                    <input name="age" type="number"></input>
+                    <text>岁</text>
+                </view>
+            </view>
+        </view>
+        <view class="form-group">
+            <view class="form-group-top">
+                <image src="./resource/images/form3.png"></image>
+                <text>联系方式</text>
+            </view>
+            <view style="position:relative">
+                <input maxlength="11" name="tel" placeholder="请填写联系方式" placeholderStyle="color:#A5A5A5;" type="number" value="{{phone}}"></input>
+            </view>
+        </view>
+        <view class="form-group">
+            <view class="form-group-top">
+                <image src="./resource/images/form5.png"></image>
+                <text>就诊科室</text>
+            </view>
+            <picker bindchange="bindPickerChange1" range="{{array1}}" value="{{index}}">
+                <input disabled="true" name="c_name" type="text" value="{{array1[index]}}"></input>
+            </picker>
+            <image class="arrow" src="./resource/images/yjt.png"></image>
+        </view>
+        <view class="form-group">
+            <view class="form-group-top">
+                <image src="./resource/images/form6.png"></image>
+                <text>就诊医生</text>
+            </view>
+            <picker bindchange="bindPickerChange2" range="{{array2}}" value="{{indexx}}">
+                <input disabled="true" name="ky_doctor" type="text" value="{{array2[indexx]}}"></input>
+            </picker>
+            <image class="arrow" src="./resource/images/yjt.png"></image>
+        </view>
+        <view class="form-group">
+            <view class="form-group-top">
+                <image src="./resource/images/form4.png"></image>
+                <text>就诊时间</text>
+            </view>
+            <view class="time_list" wx:if="{{doctime}}">
+                <view class="time_item df jsb fs30 " style="margin-bottom:10rpx;" wx:for="{{doctime}}" wx:key="id">
+                    <view>
+                      <text style="margin-left:20rpx;">
+                        {{item.startTime}} 
+                        <text style="margin-left:20rpx;">
+                          {{item.endTime}}
+                        </text>
+                      </text>
+                    </view>
+                    <view>
+                        <input name="money" style="display:none;" type="text" value="{{moneynum}}"></input>
+                        <radio bindtap="check_radio" checked="{{item.checked==1}}" data-index="{{index}}"></radio>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{doctime==''}}">
+                <view class="time_no" style="text-align:center;background:#FCFCFC;color:#dcdcdc">
+                    <image mode="aspectFit" src="./resource/images/no_mess.png" style="width:300rpx;height:200rpx;margin-bottom:20rpx;"></image>
+                    <view class="fs30">暂无排班</view>
+                </view>
+            </view>
+        </view>
+        <view class="btn">
+            <button data-type="click" formType="submit" wx:if="{{userInfo!==''}}">确认预约</button>
+            <button bindgetuserinfo="bindGetUserInfo" class="bgce" openType="getUserInfo" wx:else>授权登录</button>
+        </view>
+    </form>
+</view>
+<view class="box box2" wx:if="{{status==1||status==2||status==3}}">
+    <view class="status_png">
+        <image src="./resource/images/status_2.png" wx:if="{{status==1}}"></image>
+        <image src="./resource/images/status_3.png" wx:if="{{status==2}}"></image>
+        <image src="./resource/images/status_4.png" wx:if="{{status==3}}"></image>
+    </view>
+    <view wx:if="{{info!==false}}">
+        <view class="list">
+            <view class="item">
+                <text class="left">· 预约科室 : </text>
+                <text class="right">{{info.c_name}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 预约的时间 : </text>
+                <text class="right">{{info.ky_time}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 预约医生 : </text>
+                <text class="right">{{info.ky_doctor}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 患者姓名 : </text>
+                <text class="right">{{info.ky_name}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 患者性别 : </text>
+                <text class="right">{{info.patient_sex}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 联系电话 : </text>
+                <text class="right">{{info.ky_telphone}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 挂号金额 : </text>
+                <text class="right">￥{{info.ky_docmoney}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 预约状态 : </text>
+                <text class="right color_red" wx:if="{{status==1}}">待医生确认</text>
+                <text class="right color_red" wx:if="{{status==2}}">待支付</text>
+                <text class="right color_red" wx:if="{{status==3}}">预约成功</text>
+            </view>
+            <view class="success_img" wx:if="{{status==3}}">
+                <image src="./resource/images/success.png"></image>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{info==false}}">
+        <view class="list">
+            <view class="item">
+                <text class="left">· 预约科室 : </text>
+                <text class="right">{{mess.c_name}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 预约的时间 : </text>
+                <text class="right">{{datetime}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 预约医生 : </text>
+                <text class="right">{{mess.ky_doctor}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 患者姓名 : </text>
+                <text class="right">{{mess.name}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 患者性别 : </text>
+                <text class="right">{{mess.gender}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 联系电话 : </text>
+                <text class="right">{{mess.tel}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 挂号金额 : </text>
+                <text class="right">￥{{mess.money}}</text>
+            </view>
+            <view class="item">
+                <text class="left">· 预约状态 : </text>
+                <text class="right color_red" wx:if="{{status==1}}">待医生确认</text>
+                <text class="right color_red" wx:if="{{status==2}}">待支付</text>
+                <text class="right color_red" wx:if="{{status==3}}">预约成功</text>
+            </view>
+            <view class="success_img" wx:if="{{status==3}}">
+                <image src="./resource/images/success.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="btn" wx:if="{{status==2}}">
+        <button bindtap="pay">确认支付</button>
+    </view>
+</view>

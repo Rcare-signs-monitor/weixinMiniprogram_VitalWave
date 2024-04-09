@@ -1,0 +1,4 @@
+/* pages/documentRR/documentRR.wxss */
+page {
+  background-color: #fff;
+}

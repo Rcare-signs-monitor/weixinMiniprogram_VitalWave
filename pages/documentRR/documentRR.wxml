@@ -1,0 +1,6 @@
+<!--pages/documentRR/documentRR.wxml-->
+<view>
+  <t-demo >
+    <text-only />
+  </t-demo>
+</view>

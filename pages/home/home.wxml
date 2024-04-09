@@ -1,0 +1,54 @@
+<view class="main">
+  <view class="title-wrap">
+    <image class="title-icon" mode="widthFix" src="https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/logo.png?sign=6696f12758137e118e83339f3c675d66&t=1705932398" aria-label="Rcare Logo" />
+    <!-- <scroll-view class="scroll-view_H" scroll-x="true" scroll-with-animation="true" style="width: 45%;height: 150px;margin-left: 10%;" bindscroll="getSelectItem" scroll-left="{{last_sec_scroll_val}}">
+    <block wx:for="{{proList}}" wx:key="unique" wx:for-index="id" wx:for-item="item">
+        <view class="scroll_item {{item.selected ? 'selected' : ''}}" data-index='{{item.index}}' >
+        <view class='proImg'><image src="{{item.proUrl}}" class="slide-image" mode="aspectFit" style="height: 100%;"/></view>
+      </view>
+    </block>
+  </scroll-view> -->
+  <t-demo style="position: absolute; right: 5%;top: 10%;">
+    <single />
+  </t-demo>
+  
+  </view>
+  <view class="desc"> Rcare 毫米波雷达体征检测系统 </view>
+  <pull-down-list
+    wx:for="{{list}}"
+    name="{{item.name}}"
+    icon="{{item.icon}}"
+    wx:key="name"
+    childArr="{{item.childArr}}"
+    bind:click="clickHandle"
+  />
+  <pull-down-list-locate
+    wx:for="{{list_locate}}"
+    name="{{item.name}}"
+    icon="{{item.icon}}"
+    wx:key="name"
+    childArr="{{item.childArr}}"
+    bind:click="clickHandle"
+    
+  />
+  <pull-down-list-document
+    wx:for="{{list_document}}"
+    name="{{item.name}}"
+    icon="{{item.icon}}"
+    wx:key="name"
+    childArr="{{item.childArr}}"
+    bind:click="clickHandle"
+  />
+  <pull-down-list-doctor
+    wx:for="{{list_doctor}}"
+    name="{{item.name}}"
+    icon="{{item.icon}}"
+    wx:key="name"
+    childArr="{{item.childArr}}"
+    bind:click="clickHandle"
+  />
+  <t-demo >
+    <text-only isLogin="{{is_login}}" />
+  </t-demo>
+</view>
+

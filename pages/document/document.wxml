@@ -1,0 +1,29 @@
+<!--pages/document/document.wxml-->
+<!-- 在 WXML 文件中 -->
+<scroll-view scroll-x="true" class="table-container">
+  <view class="table">
+    <!-- 表头 -->
+    <view class="row header">
+      <view class="cell">日期</view>
+      <view class="cell">心率</view>
+      <view class="cell">呼吸率</view>
+      <view class="cell">收缩压</view>
+      <view class="cell">舒张压</view>
+    </view>
+
+    <!-- 数据行 -->
+    <block wx:for="{{userList}}" wx:for-item="user" wx:key="id">
+      <view class="row">
+        <view class="cell">{{user.date}}</view>
+        <view class="cell">{{user.heart_rate}}</view>
+        <view class="cell">{{user.respiratory_rate}}</view>
+        <view class="cell">{{user.systolic_pressure}}</view>
+        <view class="cell">{{user.diastolic_pressure}}</view>
+      </view>
+    </block>
+  </view>
+  <t-demo >
+    <text-only />
+  </t-demo>
+</scroll-view>
+

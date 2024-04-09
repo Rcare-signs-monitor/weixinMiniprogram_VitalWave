@@ -1,0 +1,4 @@
+/* pages/heart-rate/heart-rate.wxss */
+page {
+  background-color: #fff;
+}

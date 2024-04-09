@@ -1,0 +1,21 @@
+/* pages/documentBP/documentBP.wxss */
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+page {
+  background-color: #fff;
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "HeartRate",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "base": "./base/index",
+    "t-progress": "tdesign-miniprogram/progress/progress"
+  }
+}

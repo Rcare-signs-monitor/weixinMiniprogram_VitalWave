@@ -1,0 +1,13 @@
+<!--pages/heart-rate/heart-rate.wxml-->
+<view class="demo">
+  <view class="demo-title">心率监测</view>
+  <view class="demo-desc">实时心率如下：</view>
+  <view padding>
+    <t-progress theme="circle" percentage="{{HeartRate}}" />
+  </view>
+  <t-demo desc="数据分析如下：">
+    <t-progress theme="plump" percentage="{{HeartRate}}" status="{{Status}}" />
+    <view class="demo-desc">{{Text}}</view>
+    <base />
+  </t-demo>
+</view>

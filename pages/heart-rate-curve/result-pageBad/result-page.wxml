@@ -1,0 +1,8 @@
+<view class="page">
+  <view class="demo-section__wrapper">
+    <t-result theme="error" title="危急" description="呼吸曲线异常，请立刻联系医生！" />
+  </view>
+  <view class="demo-section__wrapper">
+    <t-button theme="primary" block size="large" variant="outline" bind:tap="goBack">返回</t-button>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/breathing-rate/breathing-rate.wxml-->
+<view class="demo">
+  <view class="demo-title">呼吸率监测</view>
+  <view class="demo-desc">实时呼吸率如下：</view>
+  <view padding>
+    <t-progress theme="circle" percentage="{{BreathRate}}" />
+  </view>
+  <t-demo desc="数据分析如下：">
+    <t-progress theme="plump" percentage="{{BreathRate}}" status="{{Status}}" />
+    <view class="demo-desc">{{Text}}</view>
+    <base />
+  </t-demo>
+</view>

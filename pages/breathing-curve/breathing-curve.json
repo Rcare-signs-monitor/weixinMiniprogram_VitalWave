@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "BreathingCurve",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "base": "./base/index",
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  }
+}

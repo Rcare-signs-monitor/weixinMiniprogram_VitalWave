@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+      "text-only": "./text-only/index",
+      "t-avatar": "tdesign-miniprogram/avatar/avatar",
+      "t-button": "tdesign-miniprogram/button/button"
+    },
+    "navigationBarTitleText": "User Settings"
+}
