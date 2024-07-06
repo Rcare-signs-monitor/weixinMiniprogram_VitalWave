@@ -1,15 +1,14 @@
 .pullDownList {
   width: 100%;
   box-sizing: border-box;
-  background-color: rgb(135,228,206);
-  border-radius: 50rpx;
+  border-radius: 15rpx;
   margin-bottom: 24rpx;
   overflow: hidden;
-  font-style: italic;
+  background: linear-gradient(to right, #496AFF, #569EFF);
   box-shadow: 0 2px 4px rgba(0,0,0,0.4); 
 }
 .pullDownList .switchBox {
-  height: 170rpx;
+  height: 225rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,6 +16,10 @@
   font-size: 32rpx;
   line-height: 48rpx;
   color: #333;
+  background-image: url('https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E7%9F%A9%E5%BD%A2%202(3).png?sign=69c1f7bab106bb0afeb15da59f01ddd7&t=1713959058');
+  background-size: contain;
+  background-position: center; /* 图像居中 */
+  background-repeat: no-repeat; /* 不重复显示 */
 }
 .pullDownList .name,
 .pullDownList .icon {
@@ -24,6 +27,8 @@
 }
 .pullDownList .name {
   opacity: 0.9;
+  color: #ffffff;
+  font-size: 30px;
 }
 .pullDownList.actived .name {
   opacity: 0.4;

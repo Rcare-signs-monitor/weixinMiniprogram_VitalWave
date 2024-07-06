@@ -19,5 +19,4 @@ App({
       wardNum: 0,
       ward: 3
     },
-    towxml:require('/towxml/index')
 });

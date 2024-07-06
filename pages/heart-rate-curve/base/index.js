@@ -9,9 +9,9 @@ Component({
     value: 'label_3',
     list: [
       { value: 'label_1', label: '呼吸曲线'},
-      { value: 'label_2', label: '呼吸率' },
+      // { value: 'label_2', label: '呼吸率' },
       { value: 'label_3', label: '心跳曲线'},
-      { value: 'label_4', label: '心率'},
+      // { value: 'label_4', label: '心率'},
       { value: 'label_5', label: '血压'},
     ],
   },

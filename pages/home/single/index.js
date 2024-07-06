@@ -1,24 +1,9 @@
+var option1 = []
+const app = getApp();
 Component({
   data: {
     product: {
-      value: '1',
-      options: [
-        {
-          value: '1',
-          label: '用户1',
-          image: 'https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/1.jpg?sign=99bbfbd642f056cdf7a32e511ce66f20&t=1712504034'
-        },
-        {
-          value: '2',
-          label: '用户2',
-          image: 'https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/2.jpg?sign=4eaac9918b05401ef8ac6fe8225e6593&t=1712504042'
-        },
-        {
-          value: '3',
-          label: '用户3',
-          image: 'https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/3.jpg?sign=238c8d0443edc3cd760c1347ddc36517&t=1712503987'
-        },
-      ],
+      options: [],
     },
     sorter: {
       value: 'default',
@@ -39,6 +24,46 @@ Component({
       this.setData({
         'product.value': e.detail.value,
       });
+      app.globalData.userInfo = {
+        ward: e.detail.value
+      }
+      console.log(app.globalData.userInfo.ward)
     },
+    initcompo(){
+      let that = this
+      wx.showLoading({
+        title: '加载中,请稍候',
+        mask: true
+      });
+      wx.request({
+        url: 'https://lot2024.site:442/members', 
+        method: 'GET',
+        success: function(res) {
+          for (let i=0; i<= res.data.data.length-1;i++)
+          {
+            let opt = {
+              value: res.data.data[i].info.id.toString(),
+              label: res.data.data[i].info.name,
+              image: res.data.data[i].info.image
+            }
+            option1.push(opt)
+          }
+          console.log(option1)
+          that.setData({
+            'product.value': res.data.data[0].info.id.toString(),
+            'product.options': option1,
+          });
+          wx.hideLoading();
+        },
+        fail: function(res) {
+          console.log(res);
+          wx.showToast({
+            title: '获取数据失败，请稍后重试',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      });
+    }
   },
 });

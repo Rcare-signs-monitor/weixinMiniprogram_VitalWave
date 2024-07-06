@@ -5,7 +5,6 @@
     "pull-down-list-document": "../../components/pull-down-list-document/index",
     "pull-down-list-doctor": "../../components/pull-down-list-doctor/index",
     "text-only": "./text-only/index",
-    "towxml":"/towxml/towxml",
     "t-dropdown-menu": "tdesign-miniprogram/dropdown-menu/dropdown-menu",
     "t-dropdown-item": "tdesign-miniprogram/dropdown-item/dropdown-item",
     "single": "./single"

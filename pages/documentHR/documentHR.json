@@ -1,6 +1,8 @@
 {
     "usingComponents": {
       "ec-canvas": "../../ec-canvas/ec-canvas",
-      "text-only": "./text-only/index"
+      "text-only": "./text-only/index",
+      "ant-divider": "antd-mini/Divider/index",
+      "ant-container": "antd-mini/Container/index"
     }
 }

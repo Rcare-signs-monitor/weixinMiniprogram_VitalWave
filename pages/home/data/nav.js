@@ -1,6 +1,6 @@
 const nav = {
-    name: '定位',
-    icon: 'view-module',
+    name: 'AI诊疗',
+    // icon: 'view-module',
     childArr: [
         {
           name: 'Locate',

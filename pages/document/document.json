@@ -1,6 +1,13 @@
 {
     "usingComponents": {
       "ec-canvas": "../../ec-canvas/ec-canvas",
-      "text-only": "./text-only/index"
+      "text-only": "./text-only/index",
+      "ant-list": "antd-mini/List/index",
+      "ant-list-item": "antd-mini/List/ListItem/index",
+      "ant-icon": "antd-mini/Icon/index",
+      "ant-switch": "antd-mini/Switch/index",
+      "collapse": "antd-mini/Collapse/index",
+      "t-collapse": "tdesign-miniprogram/collapse/collapse",
+      "t-collapse-panel": "tdesign-miniprogram/collapse-panel/collapse-panel"
     }
 }

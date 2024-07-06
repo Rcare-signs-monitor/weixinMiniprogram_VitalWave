@@ -8,6 +8,10 @@ page {
   padding-right: 32rpx;
   padding-top: 48rpx;
   padding-bottom: 240rpx;
+  background-image: url(https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E7%BC%96%E7%BB%84%2017.png?sign=50fe63d498f1146c2c78a46e3dcc5556&t=1713958552);
+  background-size:cover;
+  background-position: center; /* 图像居中 */
+  background-repeat: no-repeat; /* 不重复显示 */
 }
 .title-wrap {
   display: flex;

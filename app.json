@@ -68,24 +68,13 @@
     "pages/image-viewer/image-viewer",
     "pages/result/result",
     "pages/result/result-page",
-    "pages/link/link"
+    "pages/link/link",
+    "pages/AI/AI"
   ],
   "subpackages": [
     {
       "root": "pages/side-bar/",
       "pages": ["side-bar", "base/index", "switch/index", "custom/index", "with-icon/index"]
-    },
-    {
-      "root": "pages/action-sheet/",
-      "pages": ["action-sheet"]
-    },
-    {
-      "root": "pages/avatar/",
-      "pages": ["avatar"]
-    },
-    {
-      "root": "pages/calendar/",
-      "pages": ["calendar"]
     },
     {
       "root": "pages/dialog/",

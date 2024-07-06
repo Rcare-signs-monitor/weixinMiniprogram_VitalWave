@@ -1,6 +1,6 @@
 const display = {
     name: '健康档案',
-    icon: 'image',
+    // icon: 'image',
     childArr: [
         {
             name: 'document',

@@ -1,9 +1,28 @@
 <!--pages/documentHR/documentHR.wxml-->
-<view>
-  <view class="container">
-  <ec-canvas id="mychart" canvas-id="mychart-multi" ec="{{ ec }}"></ec-canvas>
-  </view>
 
+<view>
+  <scroll-view scroll-y="true" class="table-container">
+  <ant-container title="历史心率曲线">
+  <view class="little_container">
+    <ec-canvas id="mychart" canvas-id="mychart-multi" ec="{{ ec }}"></ec-canvas>
+  </view>
+</ant-container>
+  
+  
+<ant-container title="历史呼吸率曲线">
+  <view class="little_container">
+    <ec-canvas id="mychart1" canvas-id="mychart-multi1" ec="{{ ec1 }}"></ec-canvas>
+  </view>
+</ant-container>
+  
+  
+<ant-container title="历史血压曲线">
+  <view class="little_container">
+    <ec-canvas id="mychart2" canvas-id="mychart-multi2" ec="{{ ec2 }}"></ec-canvas>
+  </view>
+</ant-container>
+  
+  </scroll-view>
   <t-demo >
     <text-only />
   </t-demo>

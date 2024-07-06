@@ -4,7 +4,7 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1712641526049, function(require, module, exports) {
+__DEFINE__(1712646149341, function(require, module, exports) {
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 // If you have no idea what ASN.1 or BER is, see this:
@@ -26,8 +26,8 @@ module.exports = {
 
 };
 
-}, function(modId) {var map = {"./ber/index":1712641526050}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1712641526050, function(require, module, exports) {
+}, function(modId) {var map = {"./ber/index":1712646149342}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1712646149342, function(require, module, exports) {
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 var errors = require('./errors');
@@ -56,8 +56,8 @@ for (var e in errors) {
     module.exports[e] = errors[e];
 }
 
-}, function(modId) { var map = {"./errors":1712641526051,"./types":1712641526052,"./reader":1712641526053,"./writer":1712641526054}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1712641526051, function(require, module, exports) {
+}, function(modId) { var map = {"./errors":1712646149343,"./types":1712646149344,"./reader":1712646149345,"./writer":1712646149346}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1712646149343, function(require, module, exports) {
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 
@@ -73,7 +73,7 @@ module.exports = {
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1712641526052, function(require, module, exports) {
+__DEFINE__(1712646149344, function(require, module, exports) {
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 
@@ -112,7 +112,7 @@ module.exports = {
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1712641526053, function(require, module, exports) {
+__DEFINE__(1712646149345, function(require, module, exports) {
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 var assert = require('assert');
@@ -376,8 +376,8 @@ Reader.prototype._readTag = function (tag) {
 
 module.exports = Reader;
 
-}, function(modId) { var map = {"./types":1712641526052,"./errors":1712641526051}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1712641526054, function(require, module, exports) {
+}, function(modId) { var map = {"./types":1712646149344,"./errors":1712646149343}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1712646149346, function(require, module, exports) {
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 var assert = require('assert');
@@ -696,8 +696,8 @@ Writer.prototype._ensure = function (len) {
 
 module.exports = Writer;
 
-}, function(modId) { var map = {"./types":1712641526052,"./errors":1712641526051}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1712641526049);
+}, function(modId) { var map = {"./types":1712646149344,"./errors":1712646149343}; return __REQUIRE__(map[modId], modId); })
+return __REQUIRE__(1712646149341);
 })()
 //miniprogram-npm-outsideDeps=["assert","safer-buffer"]
 //# sourceMappingURL=index.js.map

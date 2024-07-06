@@ -3,7 +3,7 @@
   <t-avatar class="avatar-example--large" icon="user" size="large" />
 </view>  
     <view class="demo-section__wrapper">
-      <t-button theme="primary" block size="large" variant="outline" bind:tap="form_data">一键登录</t-button>
+      <t-button theme="primary" block size="large" variant="outline" bind:tap="form_data" style="background: linear-gradient(to right, #1c92d2, #61d8f0);">一键登录</t-button>
       <view class="desc-login"> 登录后畅享更多功能</view>
     </view>
   <t-demo >

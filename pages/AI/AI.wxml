@@ -1,0 +1,40 @@
+<view>
+
+<scroll-view scroll-y scroll-into-view='{{toView}}' style='height: {{scrollHeight}};'>
+  <!-- <view class='scrollMsg'> -->
+  <block wx:key wx:for='{{msgList}}' wx:for-index="index">
+
+    <!-- 单个消息1 客服发出（左） -->
+    <view wx:if='{{item.speaker=="server"}}' id='msg-{{index}}' style='display: flex; padding: 2vw 11vw 2vw 2vw;'>
+      <view style='width: 11vw; height: 11vw;'>
+        <image style='width: 11vw; height: 11vw; border-radius: 10rpx;' src='https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/image.png?sign=6e8d1df982975460f6fb4979c8952194&t=1720204115'></image>
+      </view>
+      <view style='width: 4vw; height: 11vw; margin-left: 0.5vw; display: flex; align-items: center; z-index: 9;'>
+        <image style='width: 4vw;' src='https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E5%B7%A6%E7%AE%AD%E5%A4%B4.png?sign=571885ccb573bdfd156985c3a3b19c2e&t=1720206011' mode='widthFix'></image>
+      </view>
+      <view class='leftMsg'>{{item.content}}</view>
+    </view>
+
+    <!-- 单个消息2 用户发出（右） -->
+    <view wx:else id='msg-{{index}}' style='display: flex; justify-content: flex-end; padding: 2vw 2vw 2vw 11vw;'>
+      <view class='rightMsg'>{{item.content}}</view>
+      <view style='width: 4vw; height: 11vw; margin-right: 0.5vw; display: flex; align-items: center; z-index: 9;'>
+        <image style='width: 4vw;' src='https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E5%8F%B3%E7%AE%AD%E5%A4%B4.png?sign=834aab93f1668583b3e75c9611eb5b2d&t=1720206061' mode='widthFix'></image>
+      </view>
+      <view style='width: 11vw; height: 11vw;'>
+        <image style='width: 11vw; height: 11vw; border-radius: 10rpx;' src='{{cusHeadIcon}}'></image>
+      </view>
+    </view>
+
+  </block>
+  <!-- </view> -->
+
+  <!-- 占位 -->
+  <view style='width: 100%; height: 18vw;'></view>
+</scroll-view>
+
+<view class='inputRoom' style='bottom: {{inputBottom}}'>
+  <image style='width: 7vw; margin-left: 3.2vw;' src='https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E6%96%87%E4%BB%B6%E5%A4%B9.png?sign=fbe813776d851a2d6bc0011c8feb8042&t=1720206746' mode='widthFix' bind:tap="chooseUpload"></image>
+  <input bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send' bindfocus='focus' bindblur='blur'></input>
+</view>
+</view>

@@ -1,8 +1,48 @@
-<!--pages/document/document.wxml-->
-<!-- 在 WXML 文件中 -->
-<scroll-view scroll-x="true" class="table-container">
+<scroll-view scroll-y="true" class="table-container">
+<t-collapse wx:for="{{userList}}" wx:for-item="user" wx:key="id" theme="card" defaultValue="{{[0]}}" expandMutex expandIcon>
+  <t-collapse-panel header-left-icon="https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E4%BD%93%E5%BE%81%E7%9B%91%E6%B5%8B.png?sign=ecec26da6eb3f5456bfca041e1a7297e&t=1712656598" header="体征时间：{{user.date}}" value="{{user.id}}" >
+  <ant-list
+    radius="{{ true }}">
+    <ant-list-item
+      image="https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E5%BF%83%E7%8E%87.png?sign=e531ece3585ec9bb5038e3210c8d0030&t=1712671902"
+      arrow="right"
+      bind:tap="handleTap"
+      data-info="心率">
+      心率：{{user.heart_rate}}
+    </ant-list-item>
+    <ant-list-item
+      image="https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E5%91%BC%E5%90%B8%E6%83%85%E5%86%B5.png?sign=24e7acc7bf75415a6a78f554faa93937&t=1712672092"
+      arrow="right"
+      catch:tap="catchTap"
+      data-info="呼吸率">
+      呼吸率：{{user.respiratory_rate}}
+    </ant-list-item>
+    <ant-list-item
+      image="https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E6%94%B6%E7%BC%A9%E5%8E%8B.png?sign=82ec4e286f9fc777d997b0abfac6d127&t=1712672178"
+      arrow="right"
+      bind:tap="handleTap"
+      data-info="收缩压">
+      收缩压：{{user.systolic_pressure}}
+    </ant-list-item>
+    <ant-list-item
+      image="https://6c6f-lot-test-0g7oukwsf488a4a2-1323948587.tcb.qcloud.la/%E8%88%92%E5%BC%A0%E5%8E%8B.png?sign=50e84b8f1e440d3699e8e616926e940c&t=1712672221"
+      arrow="right"
+      bind:tap="handleTap"
+      data-info="舒张压"
+    >
+      舒张压：{{user.diastolic_pressure}}
+    </ant-list-item>
+  </ant-list>
+  </t-collapse-panel>
+</t-collapse>
+</scroll-view>
+<t-demo >
+    <text-only />
+</t-demo>
+
+<!-- <scroll-view scroll-x="true" class="table-container">
   <view class="table">
-    <!-- 表头 -->
+    
     <view class="row header">
       <view class="cell">日期</view>
       <view class="cell">心率</view>
@@ -11,7 +51,7 @@
       <view class="cell">舒张压</view>
     </view>
 
-    <!-- 数据行 -->
+    
     <block wx:for="{{userList}}" wx:for-item="user" wx:key="id">
       <view class="row">
         <view class="cell">{{user.date}}</view>
@@ -25,5 +65,4 @@
   <t-demo >
     <text-only />
   </t-demo>
-</scroll-view>
-
+</scroll-view> -->

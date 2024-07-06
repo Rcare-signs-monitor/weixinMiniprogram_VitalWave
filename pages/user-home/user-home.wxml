@@ -4,7 +4,7 @@
     <t-avatar class="usrAvatar" image="{{avatarUrl}}" size='large' />
   </view>
   <view class="desc-login"> {{nickName}}</view>
-  <pull-down-list
+  <pull-down-list-home
     wx:for="{{base}}"
     name="{{item.name}}"
     icon="{{item.icon}}"
@@ -53,7 +53,7 @@
     </t-input>
   </t-dialog>
 
-  <pull-down-list
+  <pull-down-list-home
     wx:for="{{ux}}"
     name="{{item.name}}"
     icon="{{item.icon}}"

@@ -8,9 +8,7 @@ Component({
     value: 'document',
     list: [
       { value: 'document', label: '健康信息' },
-      { value: 'documentHR', label: '心率曲线' },
-      { value: 'documentRR', label: '呼吸率曲线' },
-      { value: 'documentBP', label: '血压曲线' }
+      { value: 'documentHR', label: '健康信息可视化' }
     ],
   },
 
@@ -42,26 +40,7 @@ Component({
               },
             });
             break;
-          case 'documentRR':
-            wx.redirectTo({
-              url: url3,
-              fail: () => {
-                  wx.navigateTo({
-                      url: '/pages/home/navigateFail/navigateFail',
-                  });
-              },
-            });
-            break;
-          case 'documentBP':
-            wx.redirectTo({
-              url: url4,
-              fail: () => {
-                  wx.navigateTo({
-                      url: '/pages/home/navigateFail/navigateFail',
-                  });
-              },
-            });
-            break;
+          
           default:
             wx.navigateTo({
               url: '/pages/home/navigateFail/navigateFail',

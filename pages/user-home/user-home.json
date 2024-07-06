@@ -4,6 +4,7 @@
       "t-avatar": "tdesign-miniprogram/avatar/avatar",
       "t-button": "tdesign-miniprogram/button/button",
       "pull-down-list": "../../components/pull-down-list/index",
+      "pull-down-list-home": "../../components/pull-down-list-home/index",
       "base": "./base_dialog",
       "t-dialog": "tdesign-miniprogram/dialog/dialog",
       "t-input": "tdesign-miniprogram/input/input"

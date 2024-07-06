@@ -1,6 +1,6 @@
 const ux = {
     name: '医疗服务',
-    icon: 'chat',
+    // icon: 'chat',
     childArr: [
         {
             name: 'DoctorService',

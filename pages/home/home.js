@@ -2,6 +2,7 @@ import list from './data/base';
 import list_document from './data/display';
 import list_locate from './data/nav';
 import list_doctor from './data/ux';
+import list_ai from './data/ai';
 
 const app = getApp();
 function isUpperCase(str) {
@@ -19,6 +20,7 @@ Page({
         list_document,
         list_locate,
         list_doctor,
+        list_ai,
         proList: [
           {
             unique: 1,
@@ -62,7 +64,14 @@ Page({
           }
         ],
     },
+    reloadComponent: function () {
+      const component = this.selectComponent('#sin1'); // 获取组件的实例
+      if (component) {
+        component.initcompo(); // 调用组件的重新加载方法
+      }
+    },
     onLoad(options) {
+      this.reloadComponent();
         // setInterval(() => {
         //   if(this.data.last_sec_scroll_val != curridx * itemw)
         //   {
@@ -125,6 +134,7 @@ Page({
           else
           {
             path = `/pages/${name}/${name}`;
+            // console.log(path)
           }
             
         }
